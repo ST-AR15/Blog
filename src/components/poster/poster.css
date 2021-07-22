@@ -25,6 +25,8 @@
     color: #000000;
     transition-property: border-radius, height;
     transition-duration: .6s;
+    background-size: cover;
+    background-position: center;
 }
 .poster-text {
     width: 100%;
