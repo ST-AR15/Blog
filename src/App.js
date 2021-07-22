@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 // 首页的内容
 import Title from './components/title/Title'
+import Poster from './components/poster/Poster'
 
 // 需要用到的page
 import Study from './page/study/Study'
@@ -15,6 +16,7 @@ function App() {
         <div className="App">
             <Title />
             <Router>
+                <Poster />
                 <div className="stage">
                     <Route path="/study" component={ Study } />
                     <Route path="/novel" component={ Novel } />
