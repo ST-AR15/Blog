@@ -51,16 +51,16 @@
 }
 
 /* 页面跳转的动画 */
-.view-enter > .poster {
+.view-enter .poster {
     opacity: 0;
 }
-.view-enter-active > .poster {
+.view-enter-active .poster {
     opacity: 1;
 }
-.view-exit > .poster {
+.view-exit .poster {
     opacity: 1;
 }
-.view-exit-active > .poster {
+.view-exit-active .poster {
     opacity: 0;
 }
 .view-enter .poster-item {

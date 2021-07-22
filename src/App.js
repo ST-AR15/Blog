@@ -2,9 +2,8 @@ import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group'
 
-// 首页的内容
-import Title from './components/title/Title'
-import Poster from './components/poster/Poster'
+// 首页
+import Menu from './components/Menu'
 
 // 需要用到的page
 import Study from './page/study/Study'
@@ -13,9 +12,7 @@ import Games from './page/games/Games'
 import Tools from './page/tools/Tools'
 
 const routes = [
-    // TODO 为了适配react-router的使用习惯，另外也是为了逻辑正常，应该把Title和Poster整合起来（他们使用了同一个path）
-    { path: '/', name: 'Title', Component: Title },
-    { path: '/', name: 'Poster', Component: Poster },
+    { path: '/', name: 'Menu', Component: Menu },
     { path: '/study', name: 'Study', Component: Study },
     { path: '/novel', name: 'Novel', Component: Novel },
     { path: '/games', name: 'Games', Component: Games },
@@ -23,6 +20,7 @@ const routes = [
 ]
 
 function App() {
+    // TODO 这里会报一个有关findDOMNode的Warning
     return (
         <div className="App">
             <Router>

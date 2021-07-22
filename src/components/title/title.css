@@ -18,17 +18,17 @@
 }
 
 /* 页面切换的动画 */
-.view-enter > .title {
+.view-enter .title {
     transform: translateY(100%);
     opacity: 0;
 }
-.view-enter-active > .title {
+.view-enter-active .title {
     opacity: 1;
     transform: translateY(0);
 }
-.view-exit > .title{
+.view-exit .title{
     opacity: 1;
 }
-.view-exit-active > .title{
+.view-exit-active .title{
     opacity: 0;
 }
