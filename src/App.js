@@ -14,9 +14,9 @@ import Tools from './page/tools/Tools'
 function App() {
     return (
         <div className="App">
-            <Title />
             <Router>
-                <Poster />
+                <Route path="/" exact component={ Title } />
+                <Route path="/" exact component={ Poster } />
                 <div className="stage">
                     <Route path="/study" component={ Study } />
                     <Route path="/novel" component={ Novel } />
