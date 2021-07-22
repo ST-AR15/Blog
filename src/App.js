@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 // 首页的内容
-import Title from './Title'
+import Title from './components/title/Title'
 
 // 需要用到的page
 import Study from './page/study/Study'

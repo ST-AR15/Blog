@@ -1,5 +1,5 @@
 import React from 'react';
-import { randomNum } from './tools'
+import { randomNum } from '../../tools'
 
 class Title extends React.Component {
     constructor(props) {

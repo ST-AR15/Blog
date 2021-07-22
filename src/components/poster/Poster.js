@@ -6,9 +6,11 @@ class Poster extends React.Component {
     }
     render() {
         return (
-            <div className="poster">
-
-            </div>
+            <ul className="poster">
+                <li className="poster-item">
+                    
+                </li>
+            </ul>
         );
     }
 }
