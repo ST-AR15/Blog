@@ -1,0 +1,18 @@
+.title {
+    width: 100vw;
+    height: 200px;
+    position: absolute;
+    z-index: 999;
+    text-align: center;
+    transition: margin .6s;
+}
+.title-core {
+    line-height: 130px;
+    font-size: 4.6rem;
+    transition: font-size .6s;
+}
+.title-text {
+    line-height: 60px;
+    font-size: 1.4rem;
+    transition: opacity .6s;
+}

@@ -1,0 +1,11 @@
+@media screen and ( max-width: 980px ) {
+    .title {
+        margin-top: calc( 50vh - 100px);
+    }
+    .title-core {
+        font-size: 3rem;
+    }
+    .title-text {
+        opacity: 0;
+    }
+}

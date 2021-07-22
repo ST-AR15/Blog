@@ -1,6 +1,9 @@
 import React from 'react';
 import { randomNum } from '../../tools'
 
+import './title.css'
+import './title.mobile.css'
+
 class Title extends React.Component {
     constructor(props) {
         super(props);
