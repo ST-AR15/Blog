@@ -11,6 +11,7 @@
     }
     .poster-text {
         transform: translateY(0);
-        padding-top: 35%;
+        padding: 0;
+        justify-content: center;
     }
 }

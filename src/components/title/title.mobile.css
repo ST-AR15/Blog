@@ -1,8 +1,9 @@
 @media screen and ( max-width: 980px ) {
     .title {
-        margin-top: calc( 50vh - 100px);
+        margin-top: calc( 50vh - 50px );
     }
     .title-core {
+        line-height: 1;
         font-size: 3rem;
     }
     .title-text {

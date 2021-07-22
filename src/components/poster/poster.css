@@ -23,7 +23,8 @@
     cursor: pointer;
     text-decoration: none;
     color: #000000;
-    transition: border-radius,height .6s;
+    transition-property: border-radius, height;
+    transition-duration: .6s;
 }
 .poster-text {
     width: 100%;
