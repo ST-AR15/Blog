@@ -4,7 +4,7 @@
     position: absolute;
     z-index: 999;
     text-align: center;
-    transition: margin .6s;
+    transition: all .6s;
 }
 .title-core {
     line-height: 130px;
@@ -15,4 +15,20 @@
     line-height: 60px;
     font-size: 1.4rem;
     transition: opacity .6s;
+}
+
+/* 页面切换的动画 */
+.view-enter > .title {
+    transform: translateY(100%);
+    opacity: 0;
+}
+.view-enter-active > .title {
+    opacity: 1;
+    transform: translateY(0);
+}
+.view-exit > .title{
+    opacity: 1;
+}
+.view-exit-active > .title{
+    opacity: 0;
 }
