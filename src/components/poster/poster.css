@@ -5,7 +5,6 @@
     position: absolute;
     top: 0;
     left: 0;
-    background-color: rgba(255, 174, 201, 0.6);
     list-style: none;
     display: flex;
     justify-content: space-around;
@@ -13,6 +12,19 @@
     padding-top: 200px;
     box-sizing: border-box;
     transition: all .6s;
+    animation-name: poster-bg;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    background-image: url(./images/poster-bg.png);
+}
+@keyframes poster-bg {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: -1920px 0;
+    }
 }
 .poster-item {
     max-width: 250px;
