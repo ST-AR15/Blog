@@ -1,19 +1,17 @@
 import React from 'react';
 
-import Header from './../Header'
-
-class Games extends React.Component {
+class Header extends React.Component {
     constructor(props) {
         super(props);
         this.state = {  };
     }
     render() {
         return (
-            <div className="Games">
-                <Header />
+            <div className="Header">
+                
             </div>
         );
     }
 }
 
-export default Games;
+export default Header;
