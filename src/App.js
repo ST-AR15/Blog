@@ -2,6 +2,8 @@ import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group'
 
+import './app.css'
+
 // 首页
 import Menu from './components/Menu'
 
