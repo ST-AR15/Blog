@@ -1,0 +1,42 @@
+.header {
+    height: 40px;
+    list-style: none;
+    display: flex;
+    border-bottom: 2px solid #888888;
+}
+.header > li {
+    width: 120px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 1.6rem;
+    cursor: pointer;
+    margin: 0 10px;
+    transition: all .3s;
+    position: relative;
+}
+.header > li::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 4px;
+    position: absolute;
+    bottom: -0;
+    background-color: rgb(233, 50, 135);
+    transform: scaleX(0);
+    transition: all .3s;
+    transform-origin: center center;
+}
+.header > li:hover::after {
+    transform: scaleX(1);
+}
+.header > li:hover {
+    color: #c51e71;
+}
+/* TODO 为后续选中的li做准备？ */
+.header > .active {
+    color: #c51e71;
+}
+.header > .active::after {
+    transform: scaleX(1);
+}

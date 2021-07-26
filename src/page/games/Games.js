@@ -1,28 +1,34 @@
-// import { BrowserRouter as useRouteMatch, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as  Router, Route, Switch, useRouteMatch } from 'react-router-dom';
 
-import Header from './../Header';
+import Header from '../header/Header';
 
-// import GamePoster from './game-poster/GamePoster';
-// import GameDisplay from './game-display/GameDisplay';
-// import GameDetail from './game-detail/GameDetail';
-
-// let { path, url } = useRouteMatch();
+import GamePoster from './game-poster/GamePoster';
+import GameDetail from './game-detail/GameDetail';
 
 function Games() {
+    let { path, url } = useRouteMatch();
+    console.log(path);
+    console.log(url);
     return (
         <div className="Games">
-            <Header />
-            {/* <Switch>
-                <Route exact path={ path }>
-                    <GamePoster />
-                </Route>
-                <Route path={ `${path}/all` }>
-                    <GameDisplay />
-                </Route>
-                <Route path={ `${path}/detail/:gameID` }>
-                    <GameDetail />
-                </Route>
-            </Switch> */}
+            <header>
+                <Header />
+            </header>
+            <main>
+                <Router>
+                    <Switch>
+                        <Route exact path={ '/games' }>
+                            <GamePoster />
+                        </Route>
+                        <Route path={ '/games/detail' }>
+                            <GameDetail />
+                        </Route>
+                        {/* <Route path={ '/games/detail/:gameID' }>
+                            <GameDetail />
+                        </Route> */}
+                    </Switch>
+                </Router>
+            </main>
         </div>
     );
 }
