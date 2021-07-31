@@ -11,7 +11,9 @@ class Menu extends React.Component {
     }
     render() {
         return (
-            <div className="menu">
+            <div className="menu" style={{
+                zIndex: 999
+            }}>
                 <Title />
                 <Poster />
             </div>
