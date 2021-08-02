@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link, Switch, useParams } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group'
 
 // 首页
@@ -18,6 +18,9 @@ import toolsposter from './components/poster/images/poster-tools.jpg'
 import './components/poster/poster.css'
 import './components/poster/poster.mobile.css'
 
+// header
+import './components/header/header.css'
+
 // game-poster
 // TODO 这个img命名被改了
 import gameposterimg from './page/games/game-poster/game-poster.png'
@@ -27,6 +30,7 @@ import './page/games/game-poster/game-poster.css'
 // TODO 这个img命名改了
 import gamedetailImage1 from './page/games/game-detail/images/DreamPlan.jpg'
 import gamedetailImage2 from './page/games/game-detail/images/Jigsaw.jpg'
+import './page/games/game-detail/game-detail.css'
 
 // 首页
 const routes = [
@@ -51,12 +55,13 @@ function App() {
                                 classNames="view"
                                 unmountOnExit
                             >
-                                <div className="view">
+                                {/* <div className="view">
                                     <Header />
                                     <main>
                                         <Component />
                                     </main>
-                                </div>
+                                </div> */}
+                                <Component />
                             </CSSTransition>
                         )}
                     </Route>
@@ -210,7 +215,7 @@ function Novel() {
 // Games
 function Games() {
     return (
-        <div className="Games">
+        <div className="games">
             <header>
                 <Header />
             </header>
@@ -220,12 +225,12 @@ function Games() {
                         <Route exact path={ '/games' }>
                             <GamePoster />
                         </Route>
-                        <Route path={ '/games/detail' }>
+                        <Route exact path={ '/games/detail' }>
                             <GameDetail />
                         </Route>
-                        {/* <Route path={ '/games/detail/:gameID' }>
+                        <Route path={ '/games/detail/:gameID' }>
                             <GameDetail />
-                        </Route> */}
+                        </Route>
                     </Switch>
                 </Router>
             </main>
@@ -269,11 +274,11 @@ function GamePosterButton() {
 }
 // game-detail
 function GameDetail() {
-    // let { gameID } = useParams();
+    let { gameID } = useParams();
     return (
         <div className="game-detail">
             <GameDetailMenu />
-            <GameDetailContent />
+            <GameDetailContent gameID={ gameID } />
         </div>
     )
 }
