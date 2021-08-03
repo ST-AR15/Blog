@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link, Switch, useParams } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link, Switch, useParams, useRouteMatch } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group'
 
 // 首页
@@ -20,6 +20,10 @@ import './components/poster/poster.mobile.css'
 
 // header
 import './components/header/header.css'
+
+// StudySelect
+import studyVue from './page/study/img/vue.png'
+import studyReact from './page/study/img/react.png'
 
 // game-poster
 // TODO 这个img命名被改了
@@ -43,6 +47,7 @@ const routes = [
 
 function App() {
     // TODO 这里会报一个有关findDOMNode的Warning
+    // TODO 应该把header和main整合在一起，把menu单独提出来
     return (
         <div className="App">
             <Router>
@@ -201,14 +206,76 @@ function Header() {
 // Study
 function Study() {
     return (
-        <div className="study"></div>
+        <div className="study">
+            <header>
+                <Header />
+            </header>
+            <main style={{
+                paddingTop: '40px'
+            }}>
+                <Router>
+                    <Switch>
+                        <Route exact path={ '/study' }>
+                            <StudySelect />
+                        </Route>
+                        <Route path={ '/study/:lesson/:chapter' }>
+                            <StudyDetail />
+                        </Route>
+                        <Route path={ '/study/:lesson' }>
+                            <StudyDetail />
+                        </Route>
+                    </Switch>
+                </Router>
+            </main>
+        </div>
+    )
+}
+function StudySelect() {
+    const { url } = useRouteMatch();
+    const title = [
+        "学无止境，所以你不需要学习无用的东西。但有用的知识毫无疑问能让你受益匪浅。",
+        "学如逆水行舟，不仅不进则退，而且在走错路的情况下会直接翻船。在学业上走歪门邪道是绝对不允许的。",
+        "学习热爱的东西是幸福的事情。"
+    ]
+    const lesson = [
+        { name: 'Vue', path: '/vue', icon: studyVue },
+        { name: 'React', path: '/react', icon: studyReact },
+    ];
+    let titleDisplay = title[randomNum(0, title.length-1)];
+    return (
+        <div className="study-select">
+            <h2>{ titleDisplay }</h2>
+            <div className="study-select-items">
+                { lesson.map(({name, path, icon}) => {
+                    return (
+                        <Link to={ url + path } key={ path }>
+                            <div className="study-select-item">
+                                <img src={ icon } alt={ name } />
+                                { name }
+                            </div>
+                        </Link>
+                        
+                    )
+                }) }
+            </div>
+        </div>
+    )
+}
+function StudyDetail() {
+    const { lesson, chapter } = useParams();
+    console.log(lesson);
+    console.log(chapter);
+    return (
+        <div className="study-detail">
+            
+        </div>
     )
 }
 
 // Novel
 function Novel() {
     return (
-        <div className="study"></div>
+        <div className="novel"></div>
     )
 }
 
